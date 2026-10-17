@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10131d">
+<meta name="description" content="Aev0rnJP Video Downloader — ダウンロードが許可された動画ファイルを保存するための無料ツール。">
+<title>Aev0rnJP Video Downloader</title>
+<style>
+:root{color-scheme:dark;--bg:#0c0f17;--panel:#141a27;--panel2:#1b2333;--line:#2a3448;--text:#f2f5fb;--muted:#a6b0c3;--accent:#8b7cff;--accent2:#5de1c4;--danger:#ff8f9b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#28244c 0,transparent 45%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}button,input{font:inherit}a{color:#b9b0ff} .wrap{max-width:980px;margin:auto;padding:28px 18px 56px}.top{display:flex;align-items:center;gap:12px;margin-bottom:42px}.logo{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#5145b5);font-size:22px;box-shadow:0 8px 28px #6558ff35}.brand{font-weight:800;letter-spacing:.2px}.brand small{display:block;color:var(--muted);font-size:12px;font-weight:500;margin-top:2px}.pill{margin-left:auto;border:1px solid #315b55;background:#102b2a;color:var(--accent2);font-size:12px;border-radius:99px;padding:7px 10px}.hero{text-align:center;margin-bottom:28px}.eyebrow{color:var(--accent2);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(30px,6vw,52px);line-height:1.12;margin:14px 0}.hero p{color:var(--muted);max-width:620px;line-height:1.8;margin:0 auto}.panel{border:1px solid var(--line);background:linear-gradient(150deg,#171d2b,#111622);border-radius:24px;padding:clamp(18px,4vw,30px);box-shadow:0 22px 70px #0003}.field-label{display:block;font-weight:700;margin-bottom:10px}.inputrow{display:flex;gap:10px}.urlinput{flex:1;min-width:0;background:#0b0f18;border:1px solid #39445a;border-radius:13px;padding:15px 14px;color:var(--text);outline:none}.urlinput:focus{border-color:var(--accent);box-shadow:0 0 0 3px #8b7cff22}.btn{border:0;border-radius:13px;padding:14px 19px;font-weight:800;cursor:pointer;transition:transform .15s,filter .15s}.btn:hover{filter:brightness(1.08)}.btn:active{transform:scale(.98)}.primary{background:linear-gradient(135deg,#a59aff,#7464f4);color:#111322}.secondary{background:var(--panel2);border:1px solid var(--line);color:var(--text)}.hint{font-size:12px;color:var(--muted);line-height:1.7;margin:12px 2px 0}.status{display:none;margin-top:18px;border:1px solid var(--line);background:#0d121d;border-radius:14px;padding:15px;overflow-wrap:anywhere}.status.show{display:block}.status strong{display:block;margin-bottom:6px}.status p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}.result-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.section-title{font-size:18px;margin:28px 0 14px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.feature{padding:18px;border:1px solid var(--line);border-radius:17px;background:#121825}.feature .ico{font-size:22px}.feature h3{font-size:14px;margin:12px 0 6px}.feature p{font-size:12px;color:var(--muted);line-height:1.7;margin:0}.notice{margin-top:20px;padding:16px;border-radius:15px;border:1px solid #5c4c32;background:#292115;color:#e9d7b5;font-size:12px;line-height:1.8}.notice strong{color:#ffe7ad}.footer{text-align:center;color:#79849a;font-size:12px;line-height:1.8;margin-top:28px}.footer a{color:#aeb8ce}.hidden{display:none!important}@media(max-width:650px){.wrap{padding:18px 13px 36px}.top{margin-bottom:34px}.pill{font-size:10px}.inputrow{flex-direction:column}.btn{width:100%}.grid{grid-template-columns:1fr}.feature{display:flex;gap:14px;align-items:flex-start}.feature .ico{padding-top:2px}.feature h3{margin:0 0 5px}.hero p{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="logo" aria-hidden="true">↓</div><div class="brand">Aev0rnJP <small>VIDEO DOWNLOADER</small></div><span class="pill">FREE · WEB</span></header>
+<main>
+<section class="hero"><div class="eyebrow">Simple · Free · Browser-based</div><h1>動画を、かんたんに保存。</h1><p>ダウンロードが許可された動画ファイルのURLを入力して、対応状況を確認。インストール不要で、スマートフォンでも使えます。</p></section>
+<section class="panel" aria-labelledby="download-title">
+<label class="field-label" id="download-title" for="videoUrl">動画ファイルのURL</label>
+<div class="inputrow"><input class="urlinput" id="videoUrl" type="url" inputmode="url" autocomplete="url" placeholder="https://example.com/video.mp4" aria-describedby="urlHint"><button class="btn primary" id="checkBtn">URLを確認</button></div>
+<p class="hint" id="urlHint">https:// で始まるURLを入力してください。MP4・WebMなどの直接ファイルURL向けです。動画ページのURLとは異なる場合があります。</p>
+<div class="status" id="status" role="status" aria-live="polite"><strong id="statusTitle"></strong><p id="statusText"></p><div class="result-actions" id="actions"></div></div>
+</section>
+<h2 class="section-title">使い方</h2>
+<section class="grid">
+<article class="feature"><div class="ico">🔗</div><div><h3>1. URLを貼り付け</h3><p>ダウンロードが許可されている動画ファイルのURLを入力します。</p></div></article>
+<article class="feature"><div class="ico">🛡️</div><div><h3>2. 対応状況を確認</h3><p>URLの形式を確認します。サイト側の制限やブラウザの仕様により保存できない場合があります。</p></div></article>
+<article class="feature"><div class="ico">📥</div><div><h3>3. 動画を保存</h3><p>ファイルを開き、ブラウザのダウンロード機能で保存します。保存動作は端末やサイトによって異なります。</p></div></article>
+</section>
+<div class="notice"><strong>利用上の注意</strong><br>このツールは、公開・ダウンロードが許可された直接動画ファイルの利用を想定しています。YouTubeやSNSの動画ページ、配信中の映画・ドラマ、DRMで保護されたコンテンツを自動取得したり、アクセス制限を回避したりする機能はありません。著作権・各サービスの利用規約を確認し、保存する権利のあるコンテンツのみ利用してください。</div>
+</main>
+<footer class="footer">Aev0rnJP Video Downloader · 無料のブラウザツール<br>動画URLはこのページのサーバーに送信・保存しません。<br><a href="https://github.com/mylifereading6666-oss/Aev0rnJP-Video-Downloader" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a> · <a href="https://github.com/mylifereading6666-oss/Aev0rnJP-Video-Downloader/issues" target="_blank" rel="noopener noreferrer">不具合を報告</a></footer>
+</div>
+<script>
+(()=>{'use strict';
+const input=document.getElementById('videoUrl'),checkBtn=document.getElementById('checkBtn'),status=document.getElementById('status'),title=document.getElementById('statusTitle'),message=document.getElementById('statusText'),actions=document.getElementById('actions');
+function show(t,m){title.textContent=t;message.textContent=m;status.classList.add('show');actions.replaceChildren();}
+function safeUrl(raw){let u;try{u=new URL(raw.trim())}catch{return null}if(!['http:','https:'].includes(u.protocol))return null;if(u.username||u.password)return null;return u}
+function check(){const u=safeUrl(input.value);if(!u){show('URLを確認してください','有効な https:// または http:// のURLを入力してください。');return}const path=u.pathname.toLowerCase();const known=['.mp4','.webm','.mov','.m4v','.ogv','.mkv'];const looksLikeFile=known.some(ext=>path.endsWith(ext));show(looksLikeFile?'動画ファイルURLの形式を確認しました':'URLの形式を確認しました',looksLikeFile?'動画ファイルのURLのようです。サイトが直接アクセスを許可していれば、下のボタンから開けます。保存や再生は配信元の設定・ブラウザに依存します。':'これは動画ページのURLかもしれません。このツールはページから動画を抽出しません。配信元が提供する公式ダウンロード機能を利用するか、直接動画ファイルのURLを入力してください。');const open=document.createElement('button');open.className='btn primary';open.textContent='動画URLを開く';open.addEventListener('click',()=>window.open(u.href,'_blank','noopener,noreferrer'));actions.append(open);const copy=document.createElement('button');copy.className='btn secondary';copy.textContent='URLをコピー';copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(u.href);copy.textContent='コピーしました'}catch{input.select();document.execCommand('copy');copy.textContent='コピーしました'}});actions.append(copy)}
+checkBtn.addEventListener('click',check);input.addEventListener('keydown',e=>{if(e.key==='Enter')check()});input.addEventListener('input',()=>{status.classList.remove('show')});
+})();
+</script>
+</body>
+</html>
